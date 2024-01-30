@@ -1,0 +1,33 @@
+
+import random
+
+options = ["rock", "paper", "scissors"]
+
+while True:
+    user_choice = input("Choose rock, paper, or scissors: ")
+    computer_choice = random.choice(options)
+
+    print("You Chose: ", user_choice)
+    print("Computer Chose: ", computer_choice)
+
+    if user_choice == computer_choice:
+        print("It's a draw!")
+    elif (
+        (user_choice == "rock" and computer_choice == "scissors")
+        or (user_choice == "paper" and computer_choice == "rock")
+        or (user_choice == "scissors" and computer_choice == "paper")
+    ):
+        print("You win!")
+    else:
+        print("Computer wins!")
+
+    m = input("Enter 'Y' to continue, and 'N' to exit: ")
+    if m.upper() != 'Y':
+        print("---------------------")
+        print("---------------------")
+        print()
+        print()
+        print()
+        print("Thank you for playing!")
+        print("See you again soon....")
+        break  # Exit the loop if the user enters 'N'
